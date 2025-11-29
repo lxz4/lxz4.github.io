@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hoosh</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: url('https://wallpaperbat.com/img/931766-dark-forest-photo-download-the-best-free-dark-forest-hd-image.jpg') center/cover no-repeat fixed;
+            color: #e0e0e0;
+            font-family: 'Pixelify Sans', cursive;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        #bg-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .bg-text {
+            position: absolute;
+            font-size: 14px;
+            white-space: nowrap;
+            opacity: 0.4;
+        }
+        .wrapper {
+            text-align: center;
+            padding: 20px;
+            z-index: 10;
+            position: relative;
+        }
+        img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            opacity: 0.9;
+            filter: saturate(0.8) contrast(1.1);
+        }
+        .links {
+            margin-top: 18px;
+            font-size: 15px;
+        }
+        .links a {
+            color: #9370db;
+            text-decoration: none;
+            margin: 0 12px;
+            opacity: 0.85;
+            transition: opacity 0.2s;
+        }
+        .links a:hover {
+            opacity: 1;
+            color: #ba55d3;
+        }
+    </style>
+</head>
+<body>
+    <div id="bg-container"></div>
+    
+    <div class="wrapper">
+        <img src="https://i.postimg.cc/PPV30BpK/image.png" alt="avatar">
+        <div class="links">
+            <a href="https://t.me/op0sz">telegram: @op0sz</a>
+            <a href="#">discord: lxz2</a>
+        </div>
+    </div>
+    <script>
+        const russianWords = [
+            'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ',
+            'ПРОШЛОЕ', 'БУДУЩЕЕ', 'НАСТОЯЩЕЕ', 'ЗАБЫТЬ', 'ПОМНИТЬ',
+            'ИСКАТЬ', 'НАХОДИТЬ', 'ТЕРЯТЬ', 'ЛЮБИТЬ', 'НЕНАВИДЕТЬ',
+            'ЖИТЬ', 'УМИРАТЬ', 'МЕЧТАТЬ', 'СТРАДАТЬ', 'РАДОВАТЬСЯ',
+            'ПЛАКАТЬ', 'СМЕЯТЬСЯ', 'БОЯТЬСЯ', 'НАДЕЯТЬСЯ', 'ВЕРИТЬ',
+            'СОМНЕВАТЬСЯ', 'ЗНАТЬ', 'НЕЗНАТЬ', 'ПОНИМАТЬ', 'НЕПОНИМАТЬ',
+            'ХОТЕТЬ', 'НЕХОТЕТЬ', 'ДЕЛАТЬ', 'НЕДЕЛАТЬ', 'БЫТЬ', 'НЕБЫТЬ',
+            'РЕАЛЬНОСТЬ', 'НЕРЕАЛЬНОСТЬ', 'ПРАВДА', 'НЕПРАВДА', 'ЛОЖЬ',
+            'ИСТИНА', 'ТЬМА', 'СВЕТ', 'ДЕНЬ', 'НОЧЬ', 'ВРЕМЯ', 'БЕЗВРЕМЕНИ',
+            'ПРОСТРАНСТВО', 'КОНЕЦ', 'НАЧАЛО', 'БЕСКОНЕЧНОСТЬ', 'ВЕЧНОСТЬ'
+        ];
+        
+        const colors = ['#8b0000', '#a00000', '#b50000', '#c00000', '#d00000', '#ff0000'];
+        const container = document.getElementById('bg-container');
+        
+        function createText() {
+            const text = document.createElement('div');
+            text.className = 'bg-text';
+            text.textContent = russianWords[Math.floor(Math.random() * russianWords.length)];
+            text.style.color = colors[Math.floor(Math.random() * colors.length)];
+            text.style.fontSize = (Math.random() * 10 + 12) + 'px';
+            
+            text.style.top = Math.random() * 100 + '%';
+            text.style.left = Math.random() * 100 + '%';
+            
+            container.appendChild(text);
+        }
+        
+        setInterval(createText, 5);
+    </script>
+</body>
+</html>
