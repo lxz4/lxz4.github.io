@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hoosh</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #000;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            position: relative;
+        }
+        .wrapper { text-align: center; padding: 40px; max-width: 450px; }
+        .img-wrapper { margin-bottom: 25px; }
+        img { transition: transform 0.3s ease; }
+        .profile-img { width: 110px; height: 110px; border-radius: 50%; border: 2px solid #fff; }
+        .profile-img:hover { transform: scale(1.05); }
+        .name { font-size: 28px; font-weight: 600; margin-bottom: 30px; letter-spacing: -0.5px; }
+        .links { display: flex; flex-direction: column; gap: 12px; }
+        .links a { color: #fff; text-decoration: none; padding: 14px 25px; border: 1.5px solid #fff; border-radius: 50px; font-size: 14px; font-weight: 500; transition: all 0.3s ease; }
+        .links a:hover { background: #fff; color: #000; transform: translateY(-2px); }
+        .certs { margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.15); }
+        .certs-title { font-size: 14px; font-weight: 500; margin-bottom: 20px; color: rgba(255,255,255,0.7); letter-spacing: 1px; text-transform: uppercase; }
+        .certs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; max-width: 400px; margin: 0 auto; }
+        .cert-item { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 15px; transition: all 0.3s ease; cursor: pointer; }
+        .cert-item:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.3); transform: translateY(-3px); }
+        .cert-logo { width: 80px; height: 80px; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .cert-logo img { width: 100%; height: 100%; object-fit: contain; border: none; border-radius: 0; }
+        .cert-name { font-size: 13px; font-weight: 600; color: #fff; }
+        @media (max-width: 600px) { .wrapper { padding: 30px 20px; } .certs-grid { grid-template-columns: 1fr; } }
+        .gif-footer { margin-top: 25px; display: flex; flex-direction: row; justify-content: center; gap: 5px; align-items: center; flex-wrap: wrap; }
+        .gif-footer img { width: 88px; height: 31px; object-fit: contain; }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="img-wrapper">
+            <img class="profile-img" src="https://i.postimg.cc/PPV30BpK/image.png" alt="avatar">
+        </div>
+        <div class="name"></div>
+        <div class="links">
+            <a href="https://t.me/op0sz">telegram: @op0sz</a>
+            <a href="#">discord: lxz2</a>
+        </div>
+        <div class="certs">
+            <div class="certs-title">Certifications</div>
+            <div class="certs-grid">
+                <div class="cert-item">
+                    <div class="cert-logo">
+                        <img src="https://i.postimg.cc/QVjWvHJs/oscp.png" alt="OSCP">
+                    </div>
+                    <div class="cert-name">OSCP</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-logo">
+                        <img src="https://i.postimg.cc/Ffj7B4f7/gwapt.png" alt="GWAPT">
+                    </div>
+                    <div class="cert-name">GWAPT</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-logo">
+                        <img src="https://cin.comptia.org/media/securityplus-logo-certified-ce-png.8/full" alt="Security+">
+                    </div>
+                    <div class="cert-name">Security+</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-logo">
+                        <img src="https://assets.ine.com/certifications/badges/eJPT.png" alt="eJPTv1">
+                    </div>
+                    <div class="cert-name">eJPTv1</div>
+                </div>
+            </div>
+        </div>
+        <div class="gif-footer">
+            <img src="https://soulmaze.neocities.org/images/ezgif.com-gif-maker_5.gif" alt="GIF Footer">
+            <img src="https://soulmaze.neocities.org/images/mspaint.gif" alt="Small GIF">
+            <img src="https://bloodgulch.neocities.org/graphics/buttons/poweredbydew.png" alt="Powered by Dew">
+            <img src="https://i.imgur.com/RS2q2I1.jpg" alt="Extra Image">
+            <img src="https://dl.glitter-graphics.com/pub/2245/2245938v3ih9ozhzi.gif" alt="New GIF">
+            <img src="https://linuxdog.neocities.org/images/buttons/arch.png" alt="Arch Logo">
+            <img src="https://linuxdog.neocities.org/images/buttons/1gimp.gif" alt="1GIMP Logo">
+            <img src="https://file.garden/ZWclmdszsWLb2cbE/stuff/hylics.gif" alt="Hylics GIF">
+            <img src="https://file.garden/ZWclmdszsWLb2cbE/stuff/11.png" alt="New Image">
+            <img src="https://lethalcompound.net/img/graveemail.gif" alt="Grave Email GIF">
+            <img src="https://uninformednet.neocities.org/index/postal-postal2.gif" alt="Postal GIF">
+            <img src="https://foorsee.neocities.org/gifs%20and%20terry/tor.gif" alt="Tor GIF">
+            <img src="https://risingthumb.github.io/Travelers-of-Agora-Road-webring/img/traveller.png" alt="Traveller GIF">
+            <img src="https://skye.sh/media/content/88x31/power-button.gif" alt="Power Button GIF">
+            <img src="https://sudoes.neocities.org/buttons/vim.gif" alt="Vim GIF">
+            <img src="https://kadyjerry.neocities.org/images/own/box-stamp.gif" alt="Box Stamp GIF">
+            <img src="https://emocowboy.neocities.org/home/graphics/blinkies/ilovecats.gif" alt="ILoveCats GIF">
+        </div>
+    </div>
+</body>
+</html>
+
