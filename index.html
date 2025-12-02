@@ -9,7 +9,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background: #000;
+            background: #0a0000;
             color: #fff;
             font-family: 'Inter', sans-serif;
             display: flex;
@@ -17,150 +17,246 @@
             justify-content: center;
             min-height: 100vh;
             padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(139, 0, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(80, 0, 0, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
         }
 
         .top-logo {
             position: fixed;
             top: 20px;
             left: 20px;
-            width: 80px;
+            width: 50px;
+            height: 50px;
+            background: url('https://i.postimg.cc/bG5wnGTd/image.png') center/contain no-repeat;
+            filter: drop-shadow(0 0 12px rgba(139, 0, 0, 0.6));
+            animation: heartbeat 2s ease-in-out infinite;
         }
 
         .container {
             max-width: 550px;
             width: 100%;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
         .profile {
-            margin-bottom: 40px;
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { scale: 1; }
+            25% { scale: 1.15; }
+            50% { scale: 1; }
+            75% { scale: 1.08; }
         }
 
         .profile-img {
-            width: 130px;
-            height: 130px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            border: 3px solid #fff;
-            margin-bottom: 35px;
-            transition: transform 0.3s ease;
+            border: 2px solid #8b0000;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(139, 0, 0, 0.3);
         }
 
         .profile-img:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
+            box-shadow: 0 0 30px rgba(139, 0, 0, 0.5);
+            border-color: #a00000;
         }
 
         .social-links {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 12px;
-            margin-bottom: 45px;
+            margin-bottom: 50px;
         }
 
         .social-btn {
-            background: transparent;
-            color: #fff;
+            background: rgba(139, 0, 0, 0.1);
+            color: #d4d4d4;
             text-decoration: none;
-            padding: 16px 20px;
-            border: 2px solid #fff;
-            border-radius: 12px;
-            font-size: 14px;
+            padding: 15px 20px;
+            border: 1px solid rgba(139, 0, 0, 0.4);
+            font-size: 13px;
             font-weight: 500;
+            letter-spacing: 1px;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 0, 0, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .social-btn:hover::before {
+            left: 100%;
         }
 
         .social-btn:hover {
-            background: #fff;
-            color: #000;
-            transform: translateY(-2px);
+            background: rgba(139, 0, 0, 0.25);
+            border-color: rgba(139, 0, 0, 0.7);
+            color: #fff;
+            box-shadow: 0 0 15px rgba(139, 0, 0, 0.3);
         }
 
         .section-title {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
-            letter-spacing: 2px;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
-            color: rgba(255,255,255,0.6);
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+            color: rgba(139, 0, 0, 0.8);
+            margin-bottom: 22px;
+            text-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
+            position: relative;
         }
 
-        .section-title img {
-            display: none;
+        .section-title.certs-title::before {
+            content: '';
+            position: absolute;
+            left: -60px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45px;
+            height: 45px;
+            background: url('https://i.postimg.cc/PNXdqQhy/image.png') center/contain no-repeat;
+            filter: drop-shadow(0 0 10px rgba(139, 0, 0, 0.5));
+        }
+
+        .section-title.certs-title::after {
+            content: '';
+            position: absolute;
+            right: -60px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45px;
+            height: 45px;
+            background: url('https://i.postimg.cc/0MJDK17d/image.png') center/contain no-repeat;
+            filter: drop-shadow(0 0 10px rgba(139, 0, 0, 0.5));
         }
 
         .certs-grid, .desktop-grid, .badges-grid, .media-grid {
             display: grid;
-            gap: 15px;
-            margin-bottom: 50px;
+            gap: 14px;
+            margin-bottom: 45px;
         }
 
         .certs-grid {
             grid-template-columns: repeat(2, 1fr);
+            position: relative;
+        }
+
+        .certs-grid::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 60px;
+            height: 60px;
+            background: url('https://i.postimg.cc/JG73Kv8Z/image.png') center/contain no-repeat;
+            filter: drop-shadow(0 0 10px rgba(139, 0, 0, 0.5));
+        }
+
+        .certs-grid::before {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: 0;
+            width: 60px;
+            height: 60px;
+            background: url('https://i.postimg.cc/CRBqQVQK/image.png') center/contain no-repeat;
+            filter: drop-shadow(0 0 10px rgba(139, 0, 0, 0.5));
         }
 
         .cert-card, .desktop-link { 
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 20px 15px;
+            background: rgba(20, 0, 0, 0.4);
+            border: 1px solid rgba(139, 0, 0, 0.3);
+            padding: 18px 14px;
             transition: all 0.3s ease;
             cursor: pointer;
             text-decoration: none;
             color: inherit;
             display: block;
+            position: relative;
         }
 
         .cert-card:hover, .desktop-link:hover {
-            background: rgba(255,255,255,0.06);
-            border-color: rgba(255,255,255,0.25);
-            transform: translateY(-3px);
+            background: rgba(30, 0, 0, 0.6);
+            border-color: rgba(139, 0, 0, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(139, 0, 0, 0.3);
         }
 
         .cert-logo, .desktop-img {
             width: 100%;
-            border-radius: 8px;
             object-fit: contain;
         }
         
         .media-item {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px; 
+            background: rgba(20, 0, 0, 0.4);
+            border: 1px solid rgba(139, 0, 0, 0.3);
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 10px;
+            padding: 8px;
             transition: all 0.3s ease;
             cursor: pointer;
         }
 
         .media-item:hover {
-            background: rgba(255,255,255,0.06);
-            border-color: rgba(255,255,255,0.25);
-            transform: translateY(-3px);
+            background: rgba(30, 0, 0, 0.6);
+            border-color: rgba(139, 0, 0, 0.6);
+            box-shadow: 0 4px 20px rgba(139, 0, 0, 0.3);
         }
 
         .media-item video, .media-item img {
             max-width: 100%;
             max-height: 200px;
-            border-radius: 8px;
             object-fit: contain;
         }
 
         .cert-logo {
-            width: 90px;
-            height: 90px;
-            margin: 0 auto 12px;
+            width: 85px;
+            height: 85px;
+            margin: 0 auto 10px;
             display: flex;
             align-items: center;
             justify-content: center;
+            filter: drop-shadow(0 0 8px rgba(139, 0, 0, 0.2));
         }
 
         .cert-logo img, .badge-item img {
@@ -170,34 +266,60 @@
         }
 
         .cert-name, .desktop-name {
-            font-size: 14px;
-            font-weight: 600;
+            font-size: 13px;
+            font-weight: 500;
             text-align: center;
-            margin-top: 5px;
+            margin-top: 4px;
         }
 
-        .cert-name { color: #fff; }
-        .desktop-name { color: rgba(255,255,255,0.8); }
+        .cert-name { color: rgba(255,255,255,0.95); }
+        .desktop-name { color: rgba(255,255,255,0.75); }
 
-        .badges-section { margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); }
-        .badges-grid { grid-template-columns: repeat(auto-fit, minmax(88px, 1fr)); justify-items: center; gap: 8px; }
-        .badge-item { width: 88px; height: 31px; transition: transform 0.2s ease; }
-        .badge-item:hover { transform: scale(1.05); }
+        .badges-section { 
+            margin-top: 45px; 
+            padding-top: 45px; 
+            border-top: 1px solid rgba(139, 0, 0, 0.3); 
+        }
+        
+        .badges-grid { 
+            grid-template-columns: repeat(auto-fit, minmax(88px, 1fr)); 
+            justify-items: center; 
+            gap: 7px; 
+        }
+        
+        .badge-item { 
+            width: 88px; 
+            height: 31px; 
+            transition: transform 0.2s ease;
+            opacity: 0.9;
+            filter: grayscale(0.2);
+        }
+        
+        .badge-item:hover { 
+            transform: scale(1.04);
+            opacity: 1;
+            filter: grayscale(0) drop-shadow(0 0 8px rgba(139, 0, 0, 0.4));
+        }
 
-        .desktop-grid { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; margin-bottom: 20px; }
+        .desktop-grid { 
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+            gap: 20px; 
+            margin-bottom: 20px; 
+        }
         
         .media-grid {
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-bottom: 10px;
+            gap: 16px;
+            margin-bottom: 8px;
         }
         
         .note {
             font-size: 11px;
-            color: rgba(255, 255, 255, 0.4);
+            color: rgba(139, 0, 0, 0.6);
             margin-top: 0;
-            margin-bottom: 50px;
+            margin-bottom: 45px;
             text-align: center;
+            font-style: italic;
         }
 
         @media (max-width: 900px) {
@@ -208,19 +330,53 @@
             .social-links { grid-template-columns: 1fr; }
             .certs-grid { grid-template-columns: 1fr; }
             .media-grid { grid-template-columns: 1fr; }
-            .profile-img { width: 110px; height: 110px; }
-            .top-logo { width: 60px; top: 15px; left: 15px; }
+            .profile-img { width: 105px; height: 105px; }
+            .top-logo { width: 40px; height: 40px; top: 16px; left: 16px; }
+            .section-title.certs-title::before,
+            .section-title.certs-title::after { display: none; }
+            .certs-grid::after,
+            .certs-grid::before { display: none; }
         }
 
-        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); align-items: center; justify-content: center; }
+        .modal { 
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0,0,0,0.95); 
+            align-items: center; 
+            justify-content: center; 
+        }
+        
         .modal.active { display: flex; }
-        .modal-content { max-width: 95%; max-height: 95%; border-radius: 8px; object-fit: contain; }
-        .close-modal { position: absolute; top: 30px; right: 40px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; transition: color 0.3s; }
-        .close-modal:hover { color: #ccc; }
+        
+        .modal-content { 
+            max-width: 95%; 
+            max-height: 95%; 
+            object-fit: contain; 
+        }
+        
+        .close-modal { 
+            position: absolute; 
+            top: 25px; 
+            right: 35px; 
+            color: rgba(139, 0, 0, 0.8); 
+            font-size: 36px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            transition: all 0.25s; 
+        }
+        
+        .close-modal:hover { 
+            color: #8b0000;
+        }
     </style>
 </head>
 <body>
-    <img class="top-logo" src="https://i.postimg.cc/Dm5B2pDp/image.png" alt="Logo">
+    <div class="top-logo"></div>
 
     <div class="container">
         <div class="profile">
@@ -232,7 +388,7 @@
             <a href="https://discord.com/users/1075349711340457994" class="social-btn">Discord</a>
         </div>
 
-        <div class="section-title">Certifications</div>
+        <div class="section-title certs-title">Certifications</div>
         <div class="certs-grid">
             <div class="cert-card">
                 <div class="cert-logo"><img src="https://i.postimg.cc/Ffj7B4f7/gwapt.png" alt="GWAPT"></div>
@@ -253,15 +409,13 @@
         </div>
 
         <div class="desktop-section">
-            <div class="section-title">
-                My Desktop
-            </div>
+            <div class="section-title">My Desktop</div>
             <div class="desktop-grid">
                 <a class="desktop-link" href="https://i.postimg.cc/4YXcmX9d/image.png" target="_blank">
                     <img class="desktop-img" src="https://i.postimg.cc/4YXcmX9d/image.png" alt="i3wm">
                     <div class="desktop-name">i3wm</div>
                 </a>
-                <a class="desktop-link" href="https://i.postimgimg.cc/bSQGw5Yd/image.png" target="_blank">
+                <a class="desktop-link" href="https://i.postimg.cc/bSQGw5Yd/image.png" target="_blank">
                     <img class="desktop-img" src="https://i.postimg.cc/bSQGw5Yd/image.png" alt="Hyprland">
                     <div class="desktop-name">Hyprland</div>
                 </a>
@@ -273,9 +427,7 @@
         </div>
 
         <div class="badges-section">
-            <div class="section-title">
-                Web Badges
-            </div>
+            <div class="section-title">Web Badges</div>
             <div class="badges-grid">
                 <div class="badge-item"><img src="https://soulmaze.neocities.org/images/ezgif.com-gif-maker_5.gif" alt="Badge"></div>
                 <div class="badge-item"><img src="https://soulmaze.neocities.org/images/mspaint.gif" alt="Badge"></div>
@@ -335,9 +487,7 @@
                     <img src="https://files.catbox.moe/z9all1.png" alt="Media Image 2">
                 </div>
             </div>
-            <div class="note">
-               :>  اذا ما اشتغلت الفديوهات جرب متصفح ثاني يا قرد<:
-            </div>
+            <div class="note">اذا ما اشتغلت الفيديوهات جرب متصفح ثاني</div>
         </div>
     </div>
 
