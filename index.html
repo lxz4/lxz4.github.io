@@ -30,6 +30,23 @@
             z-index: 1;
         }
 
+        .corner-gif {
+            position: fixed;
+            bottom: 10px;
+            left: -30px;
+            width: 120px;
+            height: auto;
+            z-index: 999;
+            opacity: 0.9;
+            transition: all 0.3s;
+        }
+
+        .corner-gif:hover {
+            transform: scale(1.1);
+            left: -20px;
+            opacity: 1;
+        }
+
         .window {
             max-width: 800px;
             margin: 0 auto;
@@ -252,23 +269,21 @@
         .badges-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 10px;
             justify-content: center;
-            padding: 15px;
+            padding: 20px;
+            background: rgba(244, 232, 216, 0.3);
             border: 2px dashed #654321;
-            background: rgba(232, 215, 195, 0.5);
         }
 
         .badge {
             width: 88px;
             height: 31px;
-            filter: sepia(0.2);
-            transition: all 0.2s;
+            transition: transform 0.2s;
         }
 
         .badge:hover {
-            transform: scale(1.1);
-            filter: sepia(0);
+            transform: scale(1.05);
         }
 
         .badge img {
@@ -277,36 +292,252 @@
             object-fit: contain;
         }
 
-        .media-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 12px;
+        .album-3d-shelf {
+            background: linear-gradient(180deg, #1a0f0a 0%, #0a0503 100%);
+            border: 3px solid #654321;
+            padding: 30px 20px 60px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 0;
+            min-height: 300px;
+            perspective: 1200px;
+            overflow-x: auto;
+            box-shadow: inset 0 10px 30px rgba(0, 0, 0, 0.8);
         }
 
-        .media-box {
-            border: 2px solid #654321;
-            padding: 8px;
-            background: #e8d7c3;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        .album-3d-shelf::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 25px;
+            background: linear-gradient(180deg, transparent 0%, #654321 50%, #3e2723 100%);
+            border-top: 2px solid #8b4513;
         }
 
-        .media-box video,
-        .media-box img {
+        .album-3d-shelf::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 15px;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
+        }
+
+        .album-cover-3d {
+            width: 140px;
+            min-width: 140px;
+            height: 200px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform-style: preserve-3d;
+            flex-shrink: 0;
+            margin-bottom: 25px;
+            margin-left: -25px;
+        }
+
+        .album-cover-3d:first-child {
+            margin-left: 0;
+        }
+
+        .album-cover-3d:hover {
+            transform: translateZ(60px) translateY(-20px) scale(1.08);
+            z-index: 100;
+        }
+
+        .album-cover-3d::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -8px;
+            width: 8px;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                rgba(0, 0, 0, 0.8) 0%,
+                rgba(101, 67, 33, 0.4) 50%,
+                rgba(0, 0, 0, 0.6) 100%
+            );
+            transform: skewY(-2deg);
+            transition: all 0.5s;
+        }
+
+        .album-cover-3d:hover::before {
+            left: -15px;
+            width: 15px;
+            background: linear-gradient(90deg, 
+                rgba(0, 0, 0, 0.9) 0%,
+                rgba(139, 69, 19, 0.5) 50%,
+                rgba(0, 0, 0, 0.7) 100%
+            );
+        }
+
+        .album-cover-3d::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 5%;
+            right: 5%;
+            height: 25px;
+            background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.8) 0%, transparent 70%);
+            filter: blur(8px);
+            transition: all 0.5s;
+            opacity: 0.7;
+        }
+
+        .album-cover-3d:hover::after {
+            bottom: -30px;
+            left: -5%;
+            right: -5%;
+            height: 35px;
+            opacity: 0.9;
+            filter: blur(12px);
+        }
+
+        .album-cover-3d img {
             width: 100%;
-            height: auto;
-            border: 1px solid #654321;
-            filter: sepia(0.2);
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            border: 3px solid #2c1810;
+            box-shadow: 
+                0 8px 25px rgba(0, 0, 0, 0.8),
+                0 4px 12px rgba(0, 0, 0, 0.6),
+                inset 0 0 20px rgba(0, 0, 0, 0.4),
+                inset -3px 0 8px rgba(255, 255, 255, 0.1);
+            filter: brightness(0.9) contrast(1.1);
+            transition: all 0.5s;
+            transform-style: preserve-3d;
         }
 
-        .note-box {
-            border: 2px solid #654321;
-            padding: 12px;
+        .album-cover-3d:hover img {
+            filter: brightness(1.05) contrast(1.2) saturate(1.1);
+            box-shadow: 
+                0 15px 40px rgba(0, 0, 0, 0.9),
+                0 8px 20px rgba(0, 0, 0, 0.7),
+                inset 0 0 25px rgba(0, 0, 0, 0.3),
+                inset -5px 0 12px rgba(255, 255, 255, 0.15);
+            border-color: #3e2723;
+        }
+
+        .album-info {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
             text-align: center;
-            margin-top: 15px;
-            background: #d4c4b0;
-            font-size: 13px;
             font-family: 'Special Elite', monospace;
-            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+            font-size: 10px;
+            color: #f4e8d8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+            padding: 6px 4px;
+            background: linear-gradient(180deg, rgba(62, 39, 35, 0.95), rgba(26, 15, 10, 0.95));
+            border: 1px solid #654321;
+            transition: all 0.3s;
+            pointer-events: none;
+            line-height: 1.4;
+            z-index: 1;
+        }
+
+        .album-shelf {
+            background: #2c1810;
+            border: 3px solid #654321;
+            padding: 20px;
+            position: relative;
+            overflow-x: auto;
+            display: flex;
+            align-items: flex-end;
+            min-height: 200px;
+            gap: 3px;
+        }
+
+        .album-shelf::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: #1a0f0a;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .album-spine {
+            width: 35px;
+            min-width: 35px;
+            height: 180px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+            flex-shrink: 0;
+            border: 2px solid #1a0f0a;
+            margin-bottom: 10px;
+        }
+
+        .album-spine:hover {
+            transform: translateY(-15px);
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
+            z-index: 10;
+        }
+
+        .album-spine::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .album-spine::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .spine-text {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-90deg);
+            transform-origin: center;
+            font-family: 'Special Elite', monospace;
+            font-size: 9px;
+            white-space: nowrap;
+            color: #f4e8d8;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+            letter-spacing: 0.5px;
+        }
+
+        .album1 { background: linear-gradient(90deg, #8b4513 0%, #a0522d 100%); height: 190px; }
+        .album2 { background: linear-gradient(90deg, #654321 0%, #7d5a3b 100%); height: 175px; }
+        .album3 { background: linear-gradient(90deg, #3e2723 0%, #5d4037 100%); height: 185px; }
+        .album4 { background: linear-gradient(90deg, #5d4037 0%, #6d4c41 100%); height: 180px; }
+        .album5 { background: linear-gradient(90deg, #8b0000 0%, #a52a2a 100%); height: 195px; }
+        .album6 { background: linear-gradient(90deg, #4e342e 0%, #5d4037 100%); height: 170px; }
+        .album7 { background: linear-gradient(90deg, #795548 0%, #8b6f47 100%); height: 188px; }
+        .album8 { background: linear-gradient(90deg, #8b4513 0%, #a0522d 100%); height: 172px; }
+        .album9 { background: linear-gradient(90deg, #654321 0%, #7d5a3b 100%); height: 183px; }
+        .album10 { background: linear-gradient(90deg, #3e2723 0%, #5d4037 100%); height: 178px; }
+
+        .bookshelf-label {
+            text-align: center;
+            margin-top: 10px;
+            font-family: 'Special Elite', monospace;
+            font-size: 11px;
+            color: #654321;
         }
 
         .divider {
@@ -359,10 +590,37 @@
                 height: 60px;
                 font-size: 10px;
             }
+            .album-spine {
+                width: 30px;
+                min-width: 30px;
+                height: 150px;
+            }
+            .spine-text {
+                font-size: 8px;
+            }
+            .album-cover-3d {
+                width: 110px;
+                min-width: 110px;
+                height: 160px;
+                margin-left: -20px;
+            }
+            .album-cover-3d:first-child {
+                margin-left: 0;
+            }
+            .album-3d-shelf {
+                padding: 25px 15px 50px;
+                min-height: 240px;
+            }
+            .album-info {
+                font-size: 9px;
+                bottom: -45px;
+            }
         }
     </style>
 </head>
 <body>
+    <img class="corner-gif" src="https://external-media.spacehey.net/media/sc9BPHNyMMoAyeOAw75LeSmV9cX9_7zY0JWQvktqqtjw=/https://quaggos.neocities.org/Images/Azumanga%20Daioh%20Stuff/Azubounce.gif" alt="Azumanga">
+    
     <div class="window">
         <div class="titlebar">OP0SZ :: TECHNICAL MANIFESTO v1.3f</div>
 
@@ -375,7 +633,7 @@
 
             <div class="button-row">
                 <a href="https://t.me/op0sz" class="manifesto-button">TELEGRAM CONTACT</a>
-                <a href="https://discord.com/users/1075349711340457994" class="manifesto-button">DISCORD </a>
+                <a href="https://discord.com/users/1075349711340457994" class="manifesto-button">DISCORD</a>
             </div>
 
             <div class="divider"></div>
@@ -421,6 +679,37 @@
             </div>
 
             <div class="card">
+                <div class="card-title">3D Album Showcase</div>
+                <div class="album-3d-shelf">
+                    <div class="album-cover-3d">
+                        <img src="https://i.postimg.cc/QxbTYMLJ/Untitled.jpg" alt="Denial - Sevendust">
+                        <div class="album-info">Denial<br><span style="font-size: 9px; opacity: 0.8;">Sevendust</span></div>
+                    </div>
+                    <div class="album-cover-3d">
+                        <img src="https://i.postimg.cc/MGTZnQ9h/images.jpg" alt="Hunted - Pale Saints">
+                        <div class="album-info">Hunted<br><span style="font-size: 9px; opacity: 0.8;">Pale Saints</span></div>
+                    </div>
+                    <div class="album-cover-3d">
+                        <img src="https://i.postimg.cc/yxXCQ1fj/Untitled.jpg" alt="startjump - julie">
+                        <div class="album-info">startjump<br><span style="font-size: 9px; opacity: 0.8;">julie</span></div>
+                    </div>
+                    <div class="album-cover-3d">
+                        <img src="https://i.postimg.cc/wxFWVR2r/Untitled.jpg" alt="15 - the space ocean">
+                        <div class="album-info">15<br><span style="font-size: 9px; opacity: 0.8;">the space ocean</span></div>
+                    </div>
+                    <div class="album-cover-3d">
+                        <img src="https://i.postimg.cc/4yKhV0wD/images.jpg" alt="Here's to you">
+                        <div class="album-info">Here's to you<br><span style="font-size: 9px; opacity: 0.8;"> :3 مدري والله</span></div>
+                    </div>
+                    <div class="album-cover-3d">
+                        <img src="https://i.postimg.cc/N0zXFYkP/Untitled.jpg" alt="خمس الحواس - ميحد حمد">
+                        <div class="album-info">خمس الحواس<br><span style="font-size: 9px; opacity: 0.8;">ميحد حمد</span></div>
+                    </div>
+                </div>
+                <div class="bookshelf-label">Music Album Collection</div>
+            </div>
+
+            <div class="card">
                 <div class="card-title">Web Badges</div>
                 <div class="badges-container">
                     <div class="badge"><img src="https://soulmaze.neocities.org/images/ezgif.com-gif-maker_5.gif" alt="Badge"></div>
@@ -443,46 +732,6 @@
                     <div class="badge"><img src="https://controlcoreangel.neocities.org/images/graphics/web/buttons/evakngelion.gif" alt="Badge"></div>
                     <div class="badge"><img src="https://lavender-but-bread.neocities.org/buttons/meow-button.gif" alt="Badge"></div>
                     <div class="badge"><img src="https://pixelsafari.neocities.org/buttons/2hl.gif" alt="Badge"></div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-title">Media</div>
-                <div class="media-grid">
-                    <div class="media-box">
-                        <video controls>
-                            <source src="https://files.catbox.moe/rq0udy.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="media-box">
-                        <video controls>
-                            <source src="https://files.catbox.moe/apnxkj.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="media-box">
-                        <video controls>
-                            <source src="https://files.catbox.moe/844cqo.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="media-box">
-                        <video controls>
-                            <source src="https://files.catbox.moe/hjsdjx.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="media-box">
-                        <video controls>
-                            <source src="https://files.catbox.moe/k40k04.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="media-box">
-                        <img src="https://files.catbox.moe/39xcr7.png" alt="Media 1">
-                    </div>
-                    <div class="media-box">
-                        <img src="https://files.catbox.moe/z9all1.png" alt="Media 2">
-                    </div>
-                </div>
-                <div class="note-box">
-                    NOTE: اذا ما اشتغلت الفديوهات جرب متصفح ثاني
                 </div>
             </div>
         </div>
