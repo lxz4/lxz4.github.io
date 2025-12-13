@@ -3,268 +3,389 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OP0SZ :: MANIFESTO</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>lxz ⁶⁶⁶</title>
+    <link rel="stylesheet" href="https://unpkg.com/7.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime&display=swap');
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        @import url("https://fonts.googleapis.com/css2?family=Coral+Pixels&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
-            background: linear-gradient(135deg, #3e2723 0%, #5d4037 50%, #3e2723 100%);
-            color: #1a0f0a;
-            font-family: 'Courier Prime', monospace;
-            padding: 20px;
-            position: relative;
+            background-color: #1a1a1a;
+            background-image: url('https://i.postimg.cc/nLRp4t1m/image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: "Segoe UI", Tahoma, sans-serif;
             min-height: 100vh;
+            padding: 0;
+            overflow-x: hidden;
+            cursor: grab;
         }
 
-        body::before {
-            content: '';
+        /* CRT Effect */
+        .crt::before {
+            content: " ";
+            display: block;
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.05"/></svg>');
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .corner-gif {
-            position: fixed;
-            top: 10px;
-            left: -50px;
-            width: 250px;
-            height: auto;
-            z-index: 999;
-            opacity: 0.9;
-            transition: all 0.3s;
-        }
-
-        .corner-gif:hover {
-            transform: scale(1.1);
-            left: -40px;
-            opacity: 1;
-        }
-
-        .window {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #f4e8d8;
-            border: 3px solid #3e2723;
-            box-shadow: 0 0 40px rgba(0, 0, 0, 0.7), inset 0 0 100px rgba(101, 67, 33, 0.1);
-            position: relative;
-            z-index: 2;
-        }
-
-        .titlebar {
-            background: #3e2723;
-            color: #f4e8d8;
-            padding: 8px 15px;
-            font-size: 16px;
-            font-family: 'Special Elite', monospace;
-            text-align: center;
-            border-bottom: 3px solid #1a0f0a;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .content {
-            padding: 30px;
-            background: #f4e8d8;
-            position: relative;
-        }
-
-        .content::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
             bottom: 0;
-            background: 
-                repeating-linear-gradient(0deg, transparent, transparent 29px, rgba(101, 67, 33, 0.1) 29px, rgba(101, 67, 33, 0.1) 30px);
+            right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 2px, 3px 100%;
             pointer-events: none;
         }
 
-        .profile-section {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 20px;
-            border: 2px dashed #654321;
-            background: rgba(244, 232, 216, 0.8);
-            position: relative;
+        .crt::after {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(18, 16, 16, 0.1);
+            opacity: 0;
+            z-index: 2;
+            pointer-events: none;
+            animation: flicker 0.15s infinite;
         }
 
-        .profile-section::before {
-            content: '§ PROFILE §';
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #f4e8d8;
-            padding: 0 15px;
-            font-size: 14px;
-            font-family: 'Special Elite', monospace;
-            color: #654321;
+        @keyframes flicker {
+            0% { opacity: 0.27861; }
+            20% { opacity: 0.18128; }
+            40% { opacity: 0.26559; }
+            60% { opacity: 0.20313; }
+            80% { opacity: 0.71428; }
+            100% { opacity: 0.24387; }
+        }
+
+        .heart {
+            position: fixed;
+            width: 80px;
+            top: 10%;
+            right: 10%;
+            z-index: 3;
+            animation: float 6s ease-in-out infinite;
+            filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.5));
+        }
+
+        .butterfly {
+            position: fixed;
+            width: 60px;
+            top: 20%;
+            left: 8%;
+            z-index: 3;
+            animation: float 8s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        ::-webkit-scrollbar { width: 14px; }
+        ::-webkit-scrollbar-track:vertical {
+            background: linear-gradient(90deg, #e5e5e5, #f0f0f0 20%);
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb {
+            border: 1.5px solid #888;
+            border-radius: 5px;
+            background: linear-gradient(90deg, #eee 45%, #ddd 0, #bbb);
+        }
+
+        .box21 {
+            width: 865px;
+            padding: 10px;
+            margin: 50px auto;
+        }
+
+        .u01 {
+            background: url("https://images4.imagebam.com/52/7e/c7/ME17EUXB_o.gif") repeat-x;
+            height: 23px;
+            margin: 0 23px;
+        }
+
+        .s01 {
+            background: url("https://images4.imagebam.com/54/68/d6/ME17EUXN_o.gif") repeat-x;
+            height: 23px;
+            margin: 0 23px;
+        }
+
+        .box-top {
+            background-image: url("https://images4.imagebam.com/2b/86/5c/ME17EUXW_o.gif"), url("https://images4.imagebam.com/06/ab/ce/ME17EUY7_o.gif");
+            background-position: top left, top right;
+            background-repeat: no-repeat, no-repeat;
+            height: 23px;
+        }
+
+        .box-center {
+            background-image: url("https://images4.imagebam.com/5b/e6/f1/ME17EUYR_o.gif"), url("https://images4.imagebam.com/86/ec/b1/ME17EUYV_o.gif");
+            background-position: top right, top left;
+            background-repeat: repeat-y, repeat-y;
+        }
+
+        .box-inner {
+            margin: 0 23px;
+            background-color: #fff;
+        }
+
+        .box-bottom {
+            background-image: url("https://images4.imagebam.com/cf/85/94/ME17EUYW_o.gif"), url("https://images4.imagebam.com/2c/e4/cb/ME17EUYY_o.gif");
+            background-position: top left, top right;
+            background-repeat: no-repeat, no-repeat;
+            height: 23px;
+        }
+
+        a {
+            transition: 0.5s;
+            text-decoration: none;
+            color: #6258c4;
+        }
+
+        ::selection {
+            color: #dbd29e;
+            background: #6c6a77;
+        }
+
+        .marquee {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px 0;
+            border-bottom: 1px solid #666;
+        }
+
+        .marquee img {
+            height: 31px;
+            margin: 0 5px;
+        }
+
+        .mainframe {
+            background-image: url(https://images4.imagebam.com/ab/bb/fa/ME17EUKB_o.gif);
+            width: 805px;
+            border-style: double;
+            padding: 5px;
+            border-radius: 10px;
+            border-color: #616161;
+        }
+
+        .header {
+            background-image: url(https://i.postimg.cc/nLRp4t1m/image.jpg);
+            height: 120px;
+            border-style: double;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 0 8px 8px #b3b2a3 inset;
+            padding: 20px 50px;
+            transition: 1s;
+            border-radius: 10px 10px 0px 0px;
+            font-family: Times;
+            border-color: #616161;
+        }
+
+        .header p {
+            margin: 5px 0;
+            color: #6258c4;
+            font-size: 30px;
+            text-shadow: 1px 1px 2px #eef7fe;
+        }
+
+        .header:hover {
+            box-shadow: 0 0 8px 8px #6d6779 inset;
+            filter: blur(1px);
+        }
+
+        .ivy {
+            background-image: url(https://images4.imagebam.com/ca/fa/84/ME17EULC_o.jpg);
+            background-position: top;
+            background-size: cover;
+            padding: 10px;
+            margin-top: 5px;
+            border-style: double;
+            font-family: Times;
+            font-size: 10px;
+            color: #d3dde7;
+            border-color: #616161;
+            text-align: center;
+        }
+
+        .ivy:hover { font-style: italic; }
+        .ivy p { margin: 0px; }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 5px;
+            margin-top: 5px;
+        }
+
+        .left-column, .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .profile-box {
+            background: linear-gradient(10deg, #b3b2a3, #eeeae7);
+            border-color: #616161;
+            padding: 15px;
+            border-style: double;
+            text-align: center;
         }
 
         .profile-img {
-            width: 160px;
-            height: 160px;
-            border: 3px solid #3e2723;
-            margin: 0 auto 15px;
+            width: 140px;
+            height: 140px;
             display: block;
-            filter: sepia(0.6) contrast(1.2) brightness(0.9);
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+            margin: 10px auto;
+            border: 3px solid #0067c0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            border-radius: 8px;
         }
 
-        .button-row {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
+        .info-section {
+            font-size: 12px;
+            line-height: 1.6;
+            margin: 10px 0;
         }
 
-        .manifesto-button {
-            background: #654321;
-            border: 2px solid #3e2723;
-            color: #f4e8d8;
-            padding: 12px 25px;
-            font-family: 'Special Elite', monospace;
-            font-size: 14px;
-            cursor: pointer;
-            text-decoration: none;
+        .info-section p { margin: 5px 0; }
+
+        .link-button {
             display: inline-block;
-            box-shadow: 3px 3px 0 #3e2723;
-            transition: all 0.2s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            padding: 8px 20px;
+            margin: 10px 5px;
+            background: linear-gradient(180deg, #f0f0f0, #d0d0d0);
+            border: 1px solid #999;
+            text-decoration: none;
+            color: #000;
+            font-size: 12px;
         }
 
-        .manifesto-button:hover {
-            background: #7d5a3b;
-            transform: translate(-2px, -2px);
-            box-shadow: 5px 5px 0 #3e2723;
+        .link-button:hover {
+            background: linear-gradient(180deg, #fff, #e0e0e0);
         }
 
-        .manifesto-button:active {
-            transform: translate(1px, 1px);
-            box-shadow: 2px 2px 0 #3e2723;
+        .title {
+            background-image: url(https://images4.imagebam.com/9b/aa/16/ME178TLZ_o.png);
+            height: 20px;
+            padding-left: 10px;
+            padding-top: 4px;
+            border-style: solid;
+            border-width: thin;
+            border-left-style: none;
+            border-color: #fff;
+            border-radius: 0px 100px 100px 0px;
+            margin-left: -5px;
+            font-size: 12px;
+            font-family: Coral Pixels;
+            transition: 1s;
         }
 
-        .card {
-            border: 2px solid #654321;
-            padding: 20px;
-            margin-bottom: 25px;
-            background: rgba(244, 232, 216, 0.9);
-            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
-            position: relative;
+        .title:hover { padding-left: 40px; }
+
+        .window-box {
+            background: #eeeae7;
+            border-style: double;
+            border-color: #616161;
+            padding: 5px;
         }
 
-        .card-title {
-            font-size: 18px;
-            margin-bottom: 20px;
+        .system-info {
+            padding: 10px;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .system-info p { margin: 5px 0; }
+
+        .counter {
             text-align: center;
-            font-family: 'Special Elite', monospace;
-            color: #3e2723;
-            border-bottom: 2px solid #654321;
-            padding-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .card-title::before { content: '§ '; }
-        .card-title::after { content: ' §'; }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-        }
-
-        .cert-box {
-            border: 2px solid #654321;
             padding: 15px;
+            font-size: 11px;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .cert-item {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 12px;
             text-align: center;
-            background: #e8d7c3;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
         }
 
-        .cert-box:hover {
-            background: #654321;
-            color: #f4e8d8;
-            transform: scale(1.02);
-        }
-
-        .cert-logo {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 10px;
-        }
-
-        .cert-logo img {
-            width: 100%;
-            height: 100%;
+        .cert-item img {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 8px;
             object-fit: contain;
         }
 
-        .cert-name {
-            font-size: 14px;
-            font-family: 'Special Elite', monospace;
+        .cert-item h3 {
+            font-size: 13px;
+            margin: 0;
+        }
+
+        .cert-item p {
+            font-size: 10px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .desktop-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            padding: 10px;
         }
 
         .desktop-item {
-            border: 2px solid #654321;
-            padding: 10px;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 8px;
             text-align: center;
-            background: #e8d7c3;
-            text-decoration: none;
-            color: #1a0f0a;
-            display: block;
-            transition: all 0.3s;
+            color: #000;
+            font-size: 11px;
         }
 
         .desktop-item:hover {
-            background: #654321;
-            color: #f4e8d8;
+            background: #e5f3ff;
+            border-color: #0067c0;
         }
 
-        .desktop-img {
+        .desktop-item img {
             width: 100%;
-            height: auto;
-            border: 2px solid #654321;
-            margin-bottom: 8px;
-        }
-
-        .desktop-name {
-            font-size: 13px;
-            font-family: 'Special Elite', monospace;
+            height: 70px;
+            object-fit: cover;
+            border: 1px solid #ccc;
+            margin-bottom: 5px;
         }
 
         .badges-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            padding: 20px;
-            background: rgba(244, 232, 216, 0.3);
-            border: 2px dashed #654321;
+            gap: 6px;
+            padding: 10px;
+            max-height: 200px;
+            overflow-y: auto;
         }
 
         .badge {
             width: 88px;
             height: 31px;
-            transition: transform 0.2s;
         }
 
         .badge img {
@@ -272,134 +393,222 @@
             height: 100%;
         }
 
-        .divider {
-            height: 2px;
-            background: #654321;
-            margin: 25px 0;
-            position: relative;
+        .about-me-img {
+            width: 150px;
+            height: auto;
+            margin: 10px auto;
+            display: block;
         }
 
-        .divider::before {
-            content: '***';
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #f4e8d8;
-            padding: 0 10px;
-            color: #654321;
-            font-family: 'Special Elite', monospace;
-        }
-
-        .stamp {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 80px;
-            height: 80px;
-            border: 3px solid #8b0000;
-            border-radius: 50%;
+        .taskbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: linear-gradient(180deg, #f0f0f0, #d0d0d0);
+            border-top: 1px solid #999;
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: #8b0000;
-            font-family: 'Special Elite', monospace;
-            font-size: 12px;
-            transform: rotate(15deg);
+            padding: 0 10px;
+            z-index: 1000;
         }
 
-        @media (max-width: 600px) {
-            .grid-2, .grid-3 {
-                grid-template-columns: 1fr;
-            }
+        .start-btn {
+            background: linear-gradient(180deg, #f0f0f0, #d0d0d0);
+            border: 1px solid #999;
+            border-radius: 3px;
+            padding: 5px 15px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        .clock {
+            margin-left: auto;
+            padding: 5px 10px;
+            font-size: 12px;
+            background: #fff;
+            border: 1px solid #999;
+        }
+
+        @media (max-width: 1024px) {
+            .box21 { width: 95%; margin: 20px auto; }
+            .mainframe { width: 100%; }
+            .content-grid { grid-template-columns: 1fr; }
+            .heart, .butterfly { display: none; }
         }
     </style>
 </head>
 <body>
-    <img class="corner-gif" src="https://external-media.spacehey.net/media/sc9BPHNyMMoAyeOAw75LeSmV9cX9_7zY0JWQvktqqtjw=/https://quaggos.neocities.org/Images/Azumanga%20Daioh%20Stuff/Azubounce.gif">
+    <div class="crt">
+        <img src="https://axayacatl.neocities.org/images/graphics/noun.png" alt="heart" class="heart">
+        <img src="https://axayacatl.neocities.org/images/graphics/bubberfly.png" alt="butterfly" class="butterfly">
 
-    <div class="window">
-        <div class="titlebar">OP0SZ :: TECHNICAL MANIFESTO v1.3f</div>
+        <div class="marquee">
+            <marquee behavior="alternate">
+                <img src="https://file.garden/ZWclmdszsWLb2cbE/stuff/11.png">
+                <img src="https://lethalcompound.net/img/graveemail.gif">
+                <img src="https://uninformednet.neocities.org/index/postal-postal2.gif">
+                <img src="https://foorsee.neocities.org/gifs%20and%20terry/tor.gif">
+                <img src="https://risingthumb.github.io/Travelers-of-Agora-Road-webring/img/traveller.png">
+                <img src="https://skye.sh/media/content/88x31/power-button.gif">
+                <img src="https://sudoes.neocities.org/buttons/vim.gif">
+                <img src="https://kadyjerry.neocities.org/images/own/box-stamp.gif">
+                <img src="https://emocowboy.neocities.org/home/graphics/blinkies/ilovecats.gif">
+                <img src="https://controlcoreangel.neocities.org/images/graphics/web/buttons/evakngelion.gif">
+                <img src="https://lavender-but-bread.neocities.org/buttons/meow-button.gif">
+                <img src="https://pixelsafari.neocities.org/buttons/2hl.gif">
+            </marquee>
+        </div>
 
-        <div class="content">
-            <div class="stamp">PROFILE<br>§§§</div>
+        <div class="box21">
+            <div class="box-top"><div class="u01"></div></div>
+            <div class="box-center">
+                <div class="box-inner">
+                    <div class="mainframe">
+                        <div class="header">
+                            <p><i>lxz</i></p>
+                            <p><i>lxz</i></p>
+                            <p><i>lxz</i><i style="font-size: 15px; color: lightgrey; margin-left: 10px">is online...</i></p>
+                        </div>
 
-            <div class="profile-section">
-                <img class="profile-img" src="https://i.postimg.cc/7CJn0zks/image.png">
-            </div>
+                        <div class="ivy">
+                            <p>
+</p>
+                        </div>
 
-            <div class="button-row">
-                <a href="https://guns.lol/lxz2" class="manifesto-button">Social Link :3</a>
-            </div>
+                        <div class="content-grid">
+                            <div class="left-column">
+                                <div class="profile-box">
+                                    <img class="profile-img" src="https://i.postimg.cc/4xWrMQhd/aaa.jpg" alt="profile">
+                                    <div class="info-section">
+                                        <p><strong>Alias:</strong> lxz</p>
+                                        <p><strong>Status:</strong> Online</p>
+                                    </div>
+                                    <a href="https://guns.lol/lxz2" class="link-button">guns.lol</a>
+                                </div>
 
-            <div class="divider"></div>
+                                <div class="window-box">
+                                    <div class="title">System Info</div>
+                                    <div class="system-info">
+                                        <p><strong>OS:</strong> Arch Linux</p>
+                                        <p><strong>WM:</strong> I3WM</p>
+                                        <p><strong>GPU:</strong> GTX 1660 SUPER</p>
+                                        <p><strong>RAM:</strong> 16GB</p>
+                                        <p><strong>Shell:</strong> zsh</p>
+                                        <p><strong>Editor:</strong> vim</p>
+                                    </div>
+                                </div>
 
-            <div class="card">
-                <div class="card-title">Certifications</div>
-                <div class="grid-2">
-                    <div class="cert-box">
-                        <div class="cert-logo"><img src="https://i.postimg.cc/Ffj7B4f7/gwapt.png"></div>
-                        <div class="cert-name">GWAPT</div>
-                    </div>
-                    <div class="cert-box">
-                        <div class="cert-logo"><img src="https://i.postimg.cc/QVjWvHJs/oscp.png"></div>
-                        <div class="cert-name">OSCP</div>
-                    </div>
-                    <div class="cert-box">
-                        <div class="cert-logo"><img src="https://assets.ine.com/certifications/badges/eJPT.png"></div>
-                        <div class="cert-name">eJPTv1</div>
-                    </div>
-                    <div class="cert-box">
-                        <div class="cert-logo"><img src="https://cin.comptia.org/media/securityplus-logo-certified-ce-png.8/full"></div>
-                        <div class="cert-name">Security+</div>
+                                <div class="window-box">
+                                    <div class="title">About Me</div>
+                                    <div style="text-align: center; padding: 15px;">
+                                        <img src="https://i.postimg.cc/dtJgnxSk/Lain-Dance-GIF-Lain-Dance-Anime-Discover-Share-GIFs.gif" alt="Lain" class="about-me-img">
+                                    </div>
+                                </div>
+
+                                <div class="window-box">
+                                    <div class="title">Visitor Counter</div>
+                                    <div class="counter">
+                                        <p>You are visitor number:</p>
+                                        <p style="font-size: 20px; color: #0067c0; font-weight: bold;">001337</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="right-column">
+                                <div class="window-box">
+                                    <div class="title">Certifications</div>
+                                    <div class="cert-grid">
+                                        <div class="cert-item">
+                                            <img src="https://i.postimg.cc/Ffj7B4f7/gwapt.png" alt="GWAPT">
+                                            <h3>GWAPT</h3>
+                                            <p>Web App Pentesting</p>
+                                        </div>
+                                        <div class="cert-item">
+                                            <img src="https://i.postimg.cc/QVjWvHJs/oscp.png" alt="OSCP">
+                                            <h3>OSCP</h3>
+                                            <p>Offensive Security</p>
+                                        </div>
+                                        <div class="cert-item">
+                                            <img src="https://assets.ine.com/certifications/badges/eJPT.png" alt="eJPT">
+                                            <h3>eJPTv1</h3>
+                                            <p>Junior Pentester</p>
+                                        </div>
+                                        <div class="cert-item">
+                                            <img src="https://cin.comptia.org/media/securityplus-logo-certified-ce-png.8/full" alt="Security+">
+                                            <h3>Security+</h3>
+                                            <p>CompTIA Security+</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="window-box">
+                                    <div class="title">Desktop Screenshots</div>
+                                    <div class="desktop-grid">
+                                        <a class="desktop-item" href="https://i.postimg.cc/4YXcmX9d/image.png">
+                                            <img src="https://i.postimg.cc/4YXcmX9d/image.png" alt="i3wm">
+                                            <span>i3wm</span>
+                                        </a>
+                                        <a class="desktop-item" href="https://i.postimg.cc/bSQGw5Yd/image.png">
+                                            <img src="https://i.postimg.cc/bSQGw5Yd/image.png" alt="Hyprland">
+                                            <span>Hyprland</span>
+                                        </a>
+                                        <a class="desktop-item" href="https://i.postimg.cc/4YrmpZKp/image.png">
+                                            <img src="https://i.postimg.cc/4YrmpZKp/image.png" alt="Window Maker">
+                                            <span>Window Maker</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="window-box">
+                                    <div class="title">88x31 Badges</div>
+                                    <div class="badges-container">
+                                        <div class="badge"><img src="https://file.garden/ZWclmdszsWLb2cbE/stuff/11.png"></div>
+                                        <div class="badge"><img src="https://lethalcompound.net/img/graveemail.gif"></div>
+                                        <div class="badge"><img src="https://uninformednet.neocities.org/index/postal-postal2.gif"></div>
+                                        <div class="badge"><img src="https://foorsee.neocities.org/gifs%20and%20terry/tor.gif"></div>
+                                        <div class="badge"><img src="https://risingthumb.github.io/Travelers-of-Agora-Road-webring/img/traveller.png"></div>
+                                        <div class="badge"><img src="https://skye.sh/media/content/88x31/power-button.gif"></div>
+                                        <div class="badge"><img src="https://sudoes.neocities.org/buttons/vim.gif"></div>
+                                        <div class="badge"><img src="https://kadyjerry.neocities.org/images/own/box-stamp.gif"></div>
+                                        <div class="badge"><img src="https://emocowboy.neocities.org/home/graphics/blinkies/ilovecats.gif"></div>
+                                        <div class="badge"><img src="https://controlcoreangel.neocities.org/images/graphics/web/buttons/evakngelion.gif"></div>
+                                        <div class="badge"><img src="https://lavender-but-bread.neocities.org/buttons/meow-button.gif"></div>
+                                        <div class="badge"><img src="https://pixelsafari.neocities.org/buttons/2hl.gif"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="box-bottom"><div class="s01"></div></div>
+        </div>
 
-            <div class="card">
-                <div class="card-title">Desktop</div>
-                <div class="grid-3">
-                    <a class="desktop-item" href="https://i.postimg.cc/4YXcmX9d/image.png">
-                        <img class="desktop-img" src="https://i.postimg.cc/4YXcmX9d/image.png">
-                        <div class="desktop-name">i3wm</div>
-                    </a>
-                    <a class="desktop-item" href="https://i.postimg.cc/bSQGw5Yd/image.png">
-                        <img class="desktop-img" src="https://i.postimg.cc/bSQGw5Yd/image.png">
-                        <div class="desktop-name">Hyprland</div>
-                    </a>
-                    <a class="desktop-item" href="https://i.postimg.cc/4YrmpZKp/image.png">
-                        <img class="desktop-img" src="https://i.postimg.cc/4YrmpZKp/image.png">
-                        <div class="desktop-name">Window Maker</div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-title">Web Badges </div>
-                <div class="badges-container">
-                    <div class="badge"><img src="https://soulmaze.neocities.org/images/ezgif.com-gif-maker_5.gif"></div>
-                    <div class="badge"><img src="https://soulmaze.neocities.org/images/mspaint.gif"></div>
-                    <div class="badge"><img src="https://bloodgulch.neocities.org/graphics/buttons/poweredbydew.png"></div>
-                    <div class="badge"><img src="https://i.imgur.com/RS2q2I1.jpg"></div>
-                    <div class="badge"><img src="https://dl.glitter-graphics.com/pub/2245/2245938v3ih9ozhzi.gif"></div>
-                    <div class="badge"><img src="https://linuxdog.neocities.org/images/buttons/arch.png"></div>
-                    <div class="badge"><img src="https://linuxdog.neocities.org/images/buttons/1gimp.gif"></div>
-                    <div class="badge"><img src="https://file.garden/ZWclmdszsWLb2cbE/stuff/hylics.gif"></div>
-                    <div class="badge"><img src="https://file.garden/ZWclmdszsWLb2cbE/stuff/11.png"></div>
-                    <div class="badge"><img src="https://lethalcompound.net/img/graveemail.gif"></div>
-                    <div class="badge"><img src="https://uninformednet.neocities.org/index/postal-postal2.gif"></div>
-                    <div class="badge"><img src="https://foorsee.neocities.org/gifs%20and%20terry/tor.gif"></div>
-                    <div class="badge"><img src="https://risingthumb.github.io/Travelers-of-Agora-Road-webring/img/traveller.png"></div>
-                    <div class="badge"><img src="https://skye.sh/media/content/88x31/power-button.gif"></div>
-                    <div class="badge"><img src="https://sudoes.neocities.org/buttons/vim.gif"></div>
-                    <div class="badge"><img src="https://kadyjerry.neocities.org/images/own/box-stamp.gif"></div>
-                    <div class="badge"><img src="https://emocowboy.neocities.org/home/graphics/blinkies/ilovecats.gif"></div>
-                    <div class="badge"><img src="https://controlcoreangel.neocities.org/images/graphics/web/buttons/evakngelion.gif"></div>
-                    <div class="badge"><img src="https://lavender-but-bread.neocities.org/buttons/meow-button.gif"></div>
-                    <div class="badge"><img src="https://pixelsafari.neocities.org/buttons/2hl.gif"></div>
-                </div>
-            </div>
+        <div class="taskbar">
+            <button class="start-btn">Start</button>
+            <div class="clock" id="clock"></div>
         </div>
     </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const time = now.toLocaleTimeString('en-US', { 
+                hour: '2-digit', 
+                minute: '2-digit',
+                hour12: true 
+            });
+            const date = now.toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric'
+            });
+            document.getElementById('clock').textContent = time + ' | ' + date;
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
 </body>
 </html>
