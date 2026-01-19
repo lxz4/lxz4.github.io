@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lxz ⁶⁶⁶</title>
-    <link rel="stylesheet" href="https://unpkg.com/7.css">
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Coral+Pixels&display=swap");
-
         * {
             margin: 0;
             padding: 0;
@@ -15,301 +12,127 @@
         }
 
         body {
-            background-color: #1a1a1a;
-            background-image: url('https://whvn.cc/rqq1ww');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            font-family: "Segoe UI", Tahoma, sans-serif;
-            min-height: 100vh;
+            background: #000;
+            background-image: 
+                repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, transparent 1px, transparent 2px, rgba(0,0,0,0.15) 3px),
+                repeating-linear-gradient(90deg, rgba(0,0,0,0.15) 0px, transparent 1px, transparent 2px, rgba(0,0,0,0.15) 3px);
+            color: #a0a0a0;
+            font-family: "Tahoma", "MS Sans Serif", sans-serif;
+            font-size: 11px;
             padding: 0;
             overflow-x: hidden;
-            cursor: grab;
         }
 
-        /* CRT Effect */
-        .crt::before {
-            content: " ";
-            display: block;
+        .wallpaper {
             position: fixed;
             top: 0;
             left: 0;
-            bottom: 0;
-            right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-            z-index: 2;
-            background-size: 100% 2px, 3px 100%;
-            pointer-events: none;
-        }
-
-        .crt::after {
-            content: " ";
-            display: block;
-            position: fixed;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background: rgba(18, 16, 16, 0.1);
-            opacity: 0;
-            z-index: 2;
-            pointer-events: none;
-            animation: flicker 0.15s infinite;
-        }
-
-        @keyframes flicker {
-            0% { opacity: 0.27861; }
-            20% { opacity: 0.18128; }
-            40% { opacity: 0.26559; }
-            60% { opacity: 0.20313; }
-            80% { opacity: 0.71428; }
-            100% { opacity: 0.24387; }
-        }
-
-        .heart {
-            position: fixed;
-            width: 80px;
-            top: 10%;
-            right: 10%;
-            z-index: 3;
-            animation: float 6s ease-in-out infinite;
-            filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.5));
-        }
-
-        .butterfly {
-            position: fixed;
-            width: 60px;
-            top: 20%;
-            left: 8%;
-            z-index: 3;
-            animation: float 8s ease-in-out infinite;
-            animation-delay: 2s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        ::-webkit-scrollbar { width: 14px; }
-        ::-webkit-scrollbar-track:vertical {
-            background: linear-gradient(90deg, #e5e5e5, #f0f0f0 20%);
-            border-radius: 5px;
-        }
-        ::-webkit-scrollbar-thumb {
-            border: 1.5px solid #888;
-            border-radius: 5px;
-            background: linear-gradient(90deg, #eee 45%, #ddd 0, #bbb);
-        }
-
-        .box21 {
-            width: 865px;
-            padding: 10px;
-            margin: 50px auto;
-        }
-
-        .u01 {
-            background: url("https://images4.imagebam.com/52/7e/c7/ME17EUXB_o.gif") repeat-x;
-            height: 23px;
-            margin: 0 23px;
-        }
-
-        .s01 {
-            background: url("https://images4.imagebam.com/54/68/d6/ME17EUXN_o.gif") repeat-x;
-            height: 23px;
-            margin: 0 23px;
-        }
-
-        .box-top {
-            background-image: url("https://images4.imagebam.com/2b/86/5c/ME17EUXW_o.gif"), url("https://images4.imagebam.com/06/ab/ce/ME17EUY7_o.gif");
-            background-position: top left, top right;
-            background-repeat: no-repeat, no-repeat;
-            height: 23px;
-        }
-
-        .box-center {
-            background-image: url("https://images4.imagebam.com/5b/e6/f1/ME17EUYR_o.gif"), url("https://images4.imagebam.com/86/ec/b1/ME17EUYV_o.gif");
-            background-position: top right, top left;
-            background-repeat: repeat-y, repeat-y;
-        }
-
-        .box-inner {
-            margin: 0 23px;
-            background-color: #fff;
-        }
-
-        .box-bottom {
-            background-image: url("https://images4.imagebam.com/cf/85/94/ME17EUYW_o.gif"), url("https://images4.imagebam.com/2c/e4/cb/ME17EUYY_o.gif");
-            background-position: top left, top right;
-            background-repeat: no-repeat, no-repeat;
-            height: 23px;
-        }
-
-        a {
-            transition: 0.5s;
-            text-decoration: none;
-            color: #6258c4;
-        }
-
-        ::selection {
-            color: #dbd29e;
-            background: #6c6a77;
-        }
-
-        .marquee {
             width: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 10px 0;
-            border-bottom: 1px solid #666;
-        }
-
-        .marquee img {
-            height: 31px;
-            margin: 0 5px;
-        }
-
-        .mainframe {
-            background-image: url(https://images4.imagebam.com/ab/bb/fa/ME17EUKB_o.gif);
-            width: 805px;
-            border-style: double;
-            padding: 5px;
-            border-radius: 10px;
-            border-color: #616161;
-        }
-
-        .header {
-            background-image: url(https://i.postimg.cc/nLRp4t1m/image.jpg);
-            height: 120px;
-            border-style: double;
+            height: 100%;
+            background-image: url('https://i.postimg.cc/CxC0Vfv0/wow.gif');
             background-size: cover;
             background-position: center;
-            box-shadow: 0 0 8px 8px #b3b2a3 inset;
-            padding: 20px 50px;
-            transition: 1s;
-            border-radius: 10px 10px 0px 0px;
-            font-family: Times;
-            border-color: #616161;
+            opacity: 0.08;
+            pointer-events: none;
+            z-index: 0;
         }
 
-        .header p {
-            margin: 5px 0;
-            color: #6258c4;
-            font-size: 30px;
-            text-shadow: 1px 1px 2px #eef7fe;
+        .desktop {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            min-height: calc(100vh - 80px);
         }
 
-        .header:hover {
-            box-shadow: 0 0 8px 8px #6d6779 inset;
-            filter: blur(1px);
+        .window {
+            position: absolute;
+            background: #c0c0c0;
+            border: 2px outset #fff;
+            box-shadow: 2px 2px 0 rgba(0,0,0,0.5);
+            min-width: 300px;
         }
 
-        .ivy {
-            background-image: url(https://images4.imagebam.com/ca/fa/84/ME17EULC_o.jpg);
-            background-position: top;
-            background-size: cover;
-            padding: 10px;
-            margin-top: 5px;
-            border-style: double;
-            font-family: Times;
-            font-size: 10px;
-            color: #d3dde7;
-            border-color: #616161;
-            text-align: center;
-        }
+        .window1 { top: 40px; left: 60px; width: 700px; z-index: 10; }
+        .window2 { top: 80px; right: 40px; width: 320px; z-index: 9; }
+        .window3 { bottom: 100px; left: 40px; width: 400px; z-index: 8; }
 
-        .ivy:hover { font-style: italic; }
-        .ivy p { margin: 0px; }
-
-        .content-grid {
-            display: grid;
-            grid-template-columns: 320px 1fr;
-            gap: 5px;
-            margin-top: 5px;
-        }
-
-        .left-column, .right-column {
+        .title-bar {
+            background: linear-gradient(to right, #000080, #1084d0);
+            padding: 2px 4px;
             display: flex;
-            flex-direction: column;
-            gap: 5px;
+            align-items: center;
+            justify-content: space-between;
+            cursor: move;
         }
 
-        .profile-box {
-            background: linear-gradient(10deg, #b3b2a3, #eeeae7);
-            border-color: #616161;
+        .title-text {
+            color: #fff;
+            font-weight: bold;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .title-buttons {
+            display: flex;
+            gap: 2px;
+        }
+
+        .title-btn {
+            width: 16px;
+            height: 14px;
+            background: #c0c0c0;
+            border: 1px outset #fff;
+            font-size: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .title-btn:active {
+            border-style: inset;
+        }
+
+        .window-content {
+            background: #c0c0c0;
+            padding: 2px;
+        }
+
+        .content-area {
+            background: #fff;
             padding: 15px;
-            border-style: double;
-            text-align: center;
+            min-height: 200px;
+            border: 1px inset #808080;
+        }
+
+        .profile-section {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
         }
 
         .profile-img {
             width: 140px;
             height: 140px;
-            display: block;
-            margin: 10px auto;
-            border: 3px solid #0067c0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            border-radius: 8px;
+            border: 1px solid #000;
         }
 
-        .info-section {
-            font-size: 12px;
-            line-height: 1.6;
-            margin: 10px 0;
+        .profile-info {
+            flex: 1;
         }
 
-        .info-section p { margin: 5px 0; }
+        .profile-info h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #000080;
+        }
 
-        .link-button {
-            display: inline-block;
-            padding: 8px 20px;
-            margin: 10px 5px;
-            background: linear-gradient(180deg, #f0f0f0, #d0d0d0);
-            border: 1px solid #999;
-            text-decoration: none;
+        .info-row {
+            margin: 6px 0;
             color: #000;
-            font-size: 12px;
-        }
-
-        .link-button:hover {
-            background: linear-gradient(180deg, #fff, #e0e0e0);
-        }
-
-        .title {
-            background-image: url(https://images4.imagebam.com/9b/aa/16/ME178TLZ_o.png);
-            height: 20px;
-            padding-left: 10px;
-            padding-top: 4px;
-            border-style: solid;
-            border-width: thin;
-            border-left-style: none;
-            border-color: #fff;
-            border-radius: 0px 100px 100px 0px;
-            margin-left: -5px;
-            font-size: 12px;
-            font-family: Coral Pixels;
-            transition: 1s;
-        }
-
-        .title:hover { padding-left: 40px; }
-
-        .window-box {
-            background: #eeeae7;
-            border-style: double;
-            border-color: #616161;
-            padding: 5px;
-        }
-
-        .system-info {
-            padding: 10px;
-            font-size: 12px;
-            line-height: 1.6;
-        }
-
-        .system-info p { margin: 5px 0; }
-
-        .counter {
-            text-align: center;
-            padding: 15px;
             font-size: 11px;
         }
 
@@ -317,87 +140,73 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 10px;
+            margin-top: 10px;
+        }
+
+        .cert-box {
+            border: 1px solid #808080;
             padding: 10px;
+            background: #fff;
         }
 
-        .cert-item {
-            background: white;
-            border: 1px solid #ccc;
-            padding: 12px;
-            text-align: center;
+        .cert-box h3 {
+            font-size: 12px;
+            color: #000080;
+            margin-bottom: 4px;
         }
 
-        .cert-item img {
-            width: 70px;
-            height: 70px;
-            margin-bottom: 8px;
-            object-fit: contain;
-        }
-
-        .cert-item h3 {
-            font-size: 13px;
-            margin: 0;
-        }
-
-        .cert-item p {
+        .cert-box p {
             font-size: 10px;
-            color: #666;
-            margin-top: 4px;
-        }
-
-        .desktop-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            padding: 10px;
-        }
-
-        .desktop-item {
-            background: white;
-            border: 1px solid #ccc;
-            padding: 8px;
-            text-align: center;
             color: #000;
-            font-size: 11px;
         }
 
-        .desktop-item:hover {
-            background: #e5f3ff;
-            border-color: #0067c0;
-        }
-
-        .desktop-item img {
-            width: 100%;
-            height: 70px;
-            object-fit: cover;
-            border: 1px solid #ccc;
-            margin-bottom: 5px;
-        }
-
-        .badges-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
+        .system-box {
+            background: #fff;
+            border: 1px inset #808080;
             padding: 10px;
-            max-height: 200px;
-            overflow-y: auto;
+            margin-top: 10px;
         }
 
-        .badge {
-            width: 88px;
-            height: 31px;
+        .system-row {
+            display: flex;
+            gap: 5px;
+            margin: 4px 0;
+            font-size: 11px;
+            color: #000;
         }
 
-        .badge img {
-            width: 100%;
-            height: 100%;
+        .system-row strong {
+            min-width: 60px;
         }
 
-        .about-me-img {
-            width: 150px;
-            height: auto;
-            margin: 10px auto;
-            display: block;
+        .desktop-icons {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 70px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .icon img {
+            width: 32px;
+            height: 32px;
+            margin-bottom: 4px;
+        }
+
+        .icon span {
+            color: #fff;
+            font-size: 11px;
+            text-shadow: 1px 1px 2px #000;
         }
 
         .taskbar {
@@ -405,171 +214,242 @@
             bottom: 0;
             left: 0;
             right: 0;
-            height: 40px;
-            background: linear-gradient(180deg, #f0f0f0, #d0d0d0);
-            border-top: 1px solid #999;
+            height: 28px;
+            background: #c0c0c0;
+            border-top: 2px outset #fff;
             display: flex;
             align-items: center;
-            padding: 0 10px;
+            padding: 2px;
             z-index: 1000;
         }
 
         .start-btn {
-            background: linear-gradient(180deg, #f0f0f0, #d0d0d0);
-            border: 1px solid #999;
-            border-radius: 3px;
-            padding: 5px 15px;
+            background: #c0c0c0;
+            border: 2px outset #fff;
+            padding: 2px 8px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 4px;
             cursor: pointer;
-            font-size: 13px;
+            font-size: 11px;
         }
 
-        .clock {
+        .start-btn:active {
+            border-style: inset;
+        }
+
+        .taskbar-divider {
+            width: 2px;
+            height: 22px;
+            border-left: 1px solid #808080;
+            border-right: 1px solid #fff;
+            margin: 0 4px;
+        }
+
+        .task-item {
+            background: #c0c0c0;
+            border: 2px outset #fff;
+            padding: 3px 8px;
+            margin-right: 2px;
+            font-size: 11px;
+            max-width: 160px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .task-item.active {
+            border-style: inset;
+        }
+
+        .system-tray {
             margin-left: auto;
-            padding: 5px 10px;
-            font-size: 12px;
-            background: #fff;
-            border: 1px solid #999;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 4px;
+            border: 1px inset #808080;
+            height: 20px;
         }
 
-        @media (max-width: 1024px) {
-            .box21 { width: 95%; margin: 20px auto; }
-            .mainframe { width: 100%; }
-            .content-grid { grid-template-columns: 1fr; }
-            .heart, .butterfly { display: none; }
+        .tray-time {
+            font-size: 11px;
+            color: #000;
+        }
+
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .screenshot-item {
+            border: 1px solid #808080;
+            padding: 4px;
+            background: #fff;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: 60px;
+            object-fit: cover;
+            border: 1px solid #000;
+            margin-bottom: 4px;
+        }
+
+        .screenshot-item span {
+            font-size: 10px;
+            color: #000;
+        }
+
+        .status-text {
+            color: #000;
+            font-size: 10px;
+            margin-top: 10px;
+            padding: 8px;
+            background: #efefef;
+            border: 1px inset #808080;
+        }
+
+        @media (max-width: 768px) {
+            .window1 { width: 90%; left: 5%; top: 20px; }
+            .window2 { width: 90%; right: 5%; top: 400px; }
+            .window3 { width: 90%; left: 5%; bottom: 120px; }
+            .desktop-icons { display: none; }
         }
     </style>
 </head>
 <body>
-    <div class="crt">
-        <img src="https://axayacatl.neocities.org/images/graphics/noun.png" alt="heart" class="heart">
-        <img src="https://axayacatl.neocities.org/images/graphics/bubberfly.png" alt="butterfly" class="butterfly">
+    <div class="wallpaper"></div>
+    
+    <div class="desktop">
+        <div class="window window1">
+            <div class="title-bar">
+                <div class="title-text">
+                    <span>📁</span> lxz - Profile
+                </div>
+                <div class="title-buttons">
+                    <div class="title-btn">_</div>
+                    <div class="title-btn">□</div>
+                    <div class="title-btn">×</div>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="content-area">
+                    <div class="profile-section">
+                        <img class="profile-img" src="https://i.postimg.cc/cLkpWMQ7/PL.jpg" alt="profile">
+                        <div class="profile-info">
+                            <h2>lxz ⁶⁶⁶</h2>
+                            <div class="info-row"><strong>Status:</strong> شدخلك</div>
+                            <div class="info-row"><strong>Focus:</strong> OPSEC & Bug Bounty</div>
+                            <div class="info-row"><strong>Location:</strong> ?؟?؟?؟?؟?؟?؟?؟?؟?؟?؟?؟?؟?</div>
+                            <div class="info-row"><strong>Link:</strong> <a href="https://guns.lol/lxz2">guns.lol/lxz2</a></div>
+                        </div>
+                    </div>
 
-        <div class="marquee">
-            <marquee behavior="alternate">
-                <img src="https://file.garden/ZWclmdszsWLb2cbE/stuff/11.png">
-                <img src="https://lethalcompound.net/img/graveemail.gif">
-                <img src="https://uninformednet.neocities.org/index/postal-postal2.gif">
-                <img src="https://foorsee.neocities.org/gifs%20and%20terry/tor.gif">
-                <img src="https://risingthumb.github.io/Travelers-of-Agora-Road-webring/img/traveller.png">
-                <img src="https://skye.sh/media/content/88x31/power-button.gif">
-                <img src="https://sudoes.neocities.org/buttons/vim.gif">
-                <img src="https://kadyjerry.neocities.org/images/own/box-stamp.gif">
-                <img src="https://emocowboy.neocities.org/home/graphics/blinkies/ilovecats.gif">
-                <img src="https://controlcoreangel.neocities.org/images/graphics/web/buttons/evakngelion.gif">
-                <img src="https://lavender-but-bread.neocities.org/buttons/meow-button.gif">
-                <img src="https://pixelsafari.neocities.org/buttons/2hl.gif">
-            </marquee>
+                    <div class="cert-grid">
+                        <div class="cert-box">
+                            <h3>GWAPT</h3>
+                            <p>Web App Pentesting</p>
+                        </div>
+                        <div class="cert-box">
+                            <h3>OSCP</h3>
+                            <p>Offensive Security</p>
+                        </div>
+                        <div class="cert-box">
+                            <h3>eJPTv1</h3>
+                            <p>Junior Pentester</p>
+                        </div>
+                        <div class="cert-box">
+                            <h3>Security+</h3>
+                            <p>CompTIA Security+</p>
+                        </div>
+                    </div>
+
+                    <div class="status-text">
+                        "I'm innocent... so why am I being punished? I don't remember selling my soul so cheaply..."
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="box21">
-            <div class="box-top"><div class="u01"></div></div>
-            <div class="box-center">
-                <div class="box-inner">
-                    <div class="mainframe">
-                        <div class="header">
-                            <p><i>lxz</i></p>
-                            <p><i>lxz</i></p>
-                            <p><i>lxz</i><i style="font-size: 15px; color: lightgrey; margin-left: 10px">is online...</i></p>
+        <div class="window window2">
+            <div class="title-bar">
+                <div class="title-text">
+                    <span>💻</span> System Information
+                </div>
+                <div class="title-buttons">
+                    <div class="title-btn">_</div>
+                    <div class="title-btn">□</div>
+                    <div class="title-btn">×</div>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="content-area">
+                    <div class="system-box">
+                        <div class="system-row"><strong>OS:</strong> Arch Linux</div>
+                        <div class="system-row"><strong>WM:</strong> i3wm</div>
+                        <div class="system-row"><strong>GPU:</strong> GTX 1660 SUPER</div>
+                        <div class="system-row"><strong>RAM:</strong> 16GB</div>
+                        <div class="system-row"><strong>Shell:</strong> zsh</div>
+                        <div class="system-row"><strong>Editor:</strong> vim</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="window window3">
+            <div class="title-bar">
+                <div class="title-text">
+                    <span>🖼️</span> Desktop Screenshots
+                </div>
+                <div class="title-buttons">
+                    <div class="title-btn">_</div>
+                    <div class="title-btn">□</div>
+                    <div class="title-btn">×</div>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="content-area">
+                    <div class="screenshots-grid">
+                        <div class="screenshot-item">
+                            <a href="https://i.postimg.cc/4YXcmX9d/image.png">
+                                <img src="https://i.postimg.cc/4YXcmX9d/image.png" alt="i3wm">
+                                <span>i3wm</span>
+                            </a>
                         </div>
-
-                        <div class="ivy">
-                            <p>interested in OPSEC & Bug Bounty</p>
+                        <div class="screenshot-item">
+                            <a href="https://i.postimg.cc/bSQGw5Yd/image.png">
+                                <img src="https://i.postimg.cc/bSQGw5Yd/image.png" alt="Hyprland">
+                                <span>Hyprland</span>
+                            </a>
                         </div>
-
-                        <div class="content-grid">
-                            <div class="left-column">
-                                <div class="profile-box">
-                                    <img class="profile-img" src="https://i.postimg.cc/cLkpWMQ7/PL.jpg" alt="profile">
-                                    <div class="info-section">
-                                        <p><strong>Alias:</strong> lxz</p>
-                                        <p><strong>Status:</strong> شدخلك </p>
-                                    </div>
-                                    <a href="https://guns.lol/lxz2" class="link-button">Visit My Profile</a>
-                                </div>
-
-                                <div class="window-box">
-                                    <div class="title">System Info</div>
-                                    <div class="system-info">
-                                        <p><strong>OS:</strong> Arch Linux</p>
-                                        <p><strong>WM:</strong> I3WM</p>
-                                        <p><strong>GPU:</strong> GTX 1660 SUPER</p>
-                                        <p><strong>RAM:</strong> 16GB</p>
-                                        <p><strong>Shell:</strong> zsh</p>
-                                        <p><strong>Editor:</strong> vim</p>
-                                    </div>
-                                </div>
-
-                                <div class="window-box">
-                                    <div class="title">About Me</div>
-                                    <div style="text-align: center; padding: 15px;">
-                                        <img src="https://i.postimg.cc/CxC0Vfv0/wow.gif" alt="Lain" class="about-me-img">
-                                    </div>
-                                </div>
-
-                                <div class="window-box">
-                                    <div class="title">Visitor Counter</div>
-                                    <div class="counter">
-                                        <p>You are visitor number:</p>
-                                        <p style="font-size: 20px; color: #0067c0; font-weight: bold;">#̇̏̀̏ͯ̎͗ͪ̈̈́ͤ#̇̏̀̏ͯ̎͗ͪ̈̈́ͤ̒͌͆̂ͨ̎̇ͮ̓͌͗̈̓̅͑̌͛ͣ͒̇̾͊́̚̚͟͝҉̶͘͠͏̸͏͏̵͏͞҉̸̨́͡҉̵̠̻̼̳͉̹͖مدري بس يمكن </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="right-column">
-                                <div class="window-box">
-                                    <div class="title">Certifications</div>
-                                    <div class="cert-grid">
-                                        <div class="cert-item">
-                                            <img src="https://i.postimg.cc/Ffj7B4f7/gwapt.png" alt="GWAPT">
-                                            <h3>GWAPT</h3>
-                                            <p>Web App Pentesting</p>
-                                        </div>
-                                        <div class="cert-item">
-                                            <img src="https://i.postimg.cc/QVjWvHJs/oscp.png" alt="OSCP">
-                                            <h3>OSCP</h3>
-                                            <p>Offensive Security</p>
-                                        </div>
-                                        <div class="cert-item">
-                                            <img src="https://assets.ine.com/certifications/badges/eJPT.png" alt="eJPT">
-                                            <h3>eJPTv1</h3>
-                                            <p>Junior Pentester</p>
-                                        </div>
-                                        <div class="cert-item">
-                                            <img src="https://cin.comptia.org/media/securityplus-logo-certified-ce-png.8/full" alt="Security+">
-                                            <h3>Security+</h3>
-                                            <p>CompTIA Security+</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="window-box">
-                                    <div class="title">Desktop Screenshots</div>
-                                    <div class="desktop-grid">
-                                        <a class="desktop-item" href="https://i.postimg.cc/4YXcmX9d/image.png">
-                                            <img src="https://i.postimg.cc/4YXcmX9d/image.png" alt="i3wm">
-                                            <span>i3wm</span>
-                                        </a>
-                                        <a class="desktop-item" href="https://i.postimg.cc/bSQGw5Yd/image.png">
-                                            <img src="https://i.postimg.cc/bSQGw5Yd/image.png" alt="Hyprland">
-                                            <span>Hyprland</span>
-                                        </a>
-                                        <a class="desktop-item" href="https://i.postimg.cc/4YrmpZKp/image.png">
-                                            <img src="https://i.postimg.cc/4YrmpZKp/image.png" alt="Window Maker">
-                                            <span>Window Maker</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="screenshot-item">
+                            <a href="https://i.postimg.cc/4YrmpZKp/image.png">
+                                <img src="https://i.postimg.cc/4YrmpZKp/image.png" alt="Window Maker">
+                                <span>Window Maker</span>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="box-bottom"><div class="s01"></div></div>
         </div>
+    </div>
 
-        <div class="taskbar">
-            <button class="start-btn">Start</button>
-            <div class="clock" id="clock"></div>
+    <div class="taskbar">
+        <div class="start-btn">
+            <span>🪟</span> Start
+        </div>
+        <div class="taskbar-divider"></div>
+        <div class="task-item active">lxz - Profile</div>
+        <div class="task-item">System Information</div>
+        <div class="task-item">Desktop Screenshots</div>
+        <div class="system-tray">
+            <span class="tray-time" id="clock"></span>
         </div>
     </div>
 
@@ -581,15 +461,44 @@
                 minute: '2-digit',
                 hour12: true 
             });
-            const date = now.toLocaleDateString('en-US', {
-                month: 'short',
-                day: 'numeric',
-                year: 'numeric'
-            });
-            document.getElementById('clock').textContent = time + ' | ' + date;
+            document.getElementById('clock').textContent = time;
         }
         updateClock();
         setInterval(updateClock, 1000);
+
+  
+        const windows = document.querySelectorAll('.window');
+        windows.forEach(win => {
+            const titleBar = win.querySelector('.title-bar');
+            let isDragging = false;
+            let currentX, currentY, initialX, initialY;
+
+            titleBar.addEventListener('mousedown', dragStart);
+            document.addEventListener('mousemove', drag);
+            document.addEventListener('mouseup', dragEnd);
+
+            function dragStart(e) {
+                if (e.target.classList.contains('title-btn')) return;
+                initialX = e.clientX - win.offsetLeft;
+                initialY = e.clientY - win.offsetTop;
+                isDragging = true;
+                win.style.zIndex = 100;
+            }
+
+            function drag(e) {
+                if (isDragging) {
+                    e.preventDefault();
+                    currentX = e.clientX - initialX;
+                    currentY = e.clientY - initialY;
+                    win.style.left = currentX + 'px';
+                    win.style.top = currentY + 'px';
+                }
+            }
+
+            function dragEnd() {
+                isDragging = false;
+            }
+        });
     </script>
 </body>
 </html>
