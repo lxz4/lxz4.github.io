@@ -1,113 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OP0SZ :: MANIFESTO</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>PGP Key</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime&display=swap');
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: linear-gradient(135deg, #3e2723 0%, #5d4037 50%, #3e2723 100%); color: #1a0f0a; font-family: 'Courier Prime', monospace; padding: 20px; position: relative; min-height: 100vh; }
-body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.05"/></svg>'); pointer-events: none; z-index: 1; }
-.window { max-width: 800px; margin: 0 auto; background: #f4e8d8; border: 3px solid #3e2723; box-shadow: 0 0 40px rgba(0,0,0,0.7), inset 0 0 100px rgba(101,67,33,0.1); position: relative; z-index: 2; }
-.titlebar { background: #3e2723; color: #f4e8d8; padding: 8px 15px; font-size: 16px; font-family: 'Special Elite', monospace; text-align: center; border-bottom: 3px solid #1a0f0a; letter-spacing: 3px; text-transform: uppercase; }
-.content { padding: 30px; background: #f4e8d8; position: relative; }
-.profile-section { text-align: center; margin-bottom: 30px; padding: 20px; border: 2px dashed #654321; background: rgba(244,232,216,0.8); position: relative; }
-.profile-img { width: 160px; height: 160px; border: 3px solid #3e2723; margin: 0 auto 15px; display: block; filter: sepia(0.6) contrast(1.2) brightness(0.9); box-shadow: 5px 5px 15px rgba(0,0,0,0.4); }
-.button-row { display: flex; justify-content: center; gap: 20px; margin-bottom: 30px; flex-wrap: wrap; }
-.manifesto-button { background: #654321; border: 2px solid #3e2723; color: #f4e8d8; padding: 12px 25px; font-family: 'Special Elite', monospace; font-size: 14px; cursor: pointer; text-decoration: none; display: inline-block; box-shadow: 3px 3px 0 #3e2723; transition: all 0.2s; text-transform: uppercase; letter-spacing: 1px; }
-.manifesto-button:hover { background: #7d5a3b; transform: translate(-2px,-2px); box-shadow: 5px 5px 0 #3e2723; }
-.manifesto-button:active { transform: translate(1px,1px); box-shadow: 2px 2px 0 #3e2723; }
-.card { border: 2px solid #654321; padding: 20px; margin-bottom: 25px; background: rgba(244,232,216,0.9); box-shadow: 3px 3px 8px rgba(0,0,0,0.3); position: relative; }
-.card-title { font-size: 18px; margin-bottom: 20px; text-align: center; font-family: 'Special Elite', monospace; color: #3e2723; border-bottom: 2px solid #654321; padding-bottom: 8px; text-transform: uppercase; letter-spacing: 2px; }
-.card-title::before { content: 'ยง '; }
-.card-title::after { content: ' ยง'; }
-.grid-2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 15px; }
-.grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 15px; }
-.cert-box { border: 2px solid #654321; padding: 15px; text-align: center; background: #e8d7c3; cursor: pointer; transition: all 0.3s; box-shadow: 2px 2px 5px rgba(0,0,0,0.2); }
-.cert-box:hover { background: #654321; color: #f4e8d8; transform: scale(1.02); }
-.cert-logo { width: 60px; height: 60px; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; }
-.cert-logo img { width: 100%; height: 100%; object-fit: contain; filter: sepia(0.4); }
-.cert-name { font-size: 14px; font-family: 'Special Elite', monospace; }
-.desktop-item { border: 2px solid #654321; padding: 10px; text-align: center; background: #e8d7c3; text-decoration: none; color: #1a0f0a; display: block; transition: all 0.3s; box-shadow: 2px 2px 5px rgba(0,0,0,0.2); }
-.desktop-item:hover { background: #654321; color: #f4e8d8; }
-.desktop-img { width: 100%; height: auto; border: 2px solid #654321; margin-bottom: 8px; filter: sepia(0.3); }
-.desktop-name { font-size: 13px; font-family: 'Special Elite', monospace; }
-.badges-container { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; padding: 15px; border: 2px dashed #654321; background: rgba(232,215,195,0.5); }
-.badge { width: 88px; height: 31px; filter: sepia(0.2); transition: all 0.2s; }
-.badge:hover { transform: scale(1.1); filter: sepia(0); }
-.badge img { width: 100%; height: 100%; object-fit: contain; }
-.bookshelf { background: #2c1810; border: 3px solid #654321; padding: 20px; position: relative; overflow-x: auto; }
-.books-container { display: flex; gap: 5px; align-items: flex-end; min-height: 200px; padding-bottom: 10px; }
-.book { width: 45px; border: 2px solid #3e2723; border-radius: 0 3px 3px 0; position: relative; cursor: pointer; transition: all 0.3s; box-shadow: 3px 3px 8px rgba(0,0,0,0.5); flex-shrink: 0; display: flex; justify-content: center; align-items: flex-end; }
-.book span { writing-mode: vertical-rl; transform: rotate(180deg); font-family: 'Special Elite', monospace; font-size: 10px; color: #f4e8d8; text-align: center; margin-bottom: 5px; }
-.bookshelf-label { text-align: center; margin-top: 10px; font-family: 'Special Elite', monospace; font-size: 11px; color: #654321; }
-.divider { height: 2px; background: #654321; margin: 25px 0; position: relative; }
-.divider::before { content: '***'; position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #f4e8d8; padding: 0 10px; color: #654321; font-family: 'Special Elite', monospace; }
-@media(max-width:600px){.grid-2,.grid-3{grid-template-columns:1fr}.button-row{flex-direction:column}.book{width:40px;height:150px}.books-container{min-height:160px}}
+  body {
+    background: #000;
+    color: #fff;
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+  img {
+    display: block;
+    max-width: 200px;
+    margin: 0 auto 2rem auto;
+    border-radius: 8px;
+  }
+  pre {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
 </style>
 </head>
 <body>
-<div class="window">
-<div class="titlebar">OP0SZ :: TECHNICAL MANIFESTO v1.3f</div>
-<div class="content">
-<div class="profile-section">
-<img class="profile-img" src="https://i.postimg.cc/7CJn0zks/image.png" alt="Subject">
-</div>
-<div class="button-row">
-<a href="https://guns.lol/lxz2" class="manifesto-button" target="_blank">GUNS.LOL</a>
-</div>
-<div class="divider"></div>
-
-<div class="card">
-<div class="card-title">Certifications</div>
-<div class="grid-2">
-<div class="cert-box"><div class="cert-logo"><img src="https://i.postimg.cc/Ffj7B4f7/gwapt.png" alt="GWAPT"></div><div class="cert-name">GWAPT</div></div>
-<div class="cert-box"><div class="cert-logo"><img src="https://i.postimg.cc/QVjWvHJs/oscp.png" alt="OSCP"></div><div class="cert-name">OSCP</div></div>
-<div class="cert-box"><div class="cert-logo"><img src="https://assets.ine.com/certifications/badges/eJPT.png" alt="eJPTv1"></div><div class="cert-name">eJPTv1</div></div>
-<div class="cert-box"><div class="cert-logo"><img src="https://cin.comptia.org/media/securityplus-logo-certified-ce-png.8/full" alt="Security+"></div><div class="cert-name">Security+</div></div>
-</div>
-</div>
-
-<div class="card">
-<div class="card-title">Desktop</div>
-<div class="grid-3">
-<a class="desktop-item" href="https://i.postimg.cc/4YXcmX9d/image.png" target="_blank"><img class="desktop-img" src="https://i.postimg.cc/4YXcmX9d/image.png"><div class="desktop-name">i3wm</div></a>
-<a class="desktop-item" href="https://i.postimg.cc/bSQGw5Yd/image.png" target="_blank"><img class="desktop-img" src="https://i.postimg.cc/bSQGw5Yd/image.png"><div class="desktop-name">Hyprland</div></a>
-<a class="desktop-item" href="https://i.postimg.cc/4YrmpZKp/image.png" target="_blank"><img class="desktop-img" src="https://i.postimg.cc/4YrmpZKp/image.png"><div class="desktop-name">Window Maker</div></a>
-</div>
-</div>
-
-<div class="card">
-<div class="card-title">Web Badges</div>
-<div class="badges-container">
-<img class="badge" src="https://soulmaze.neocities.org/images/ezgif.com-gif-maker_5.gif">
-<img class="badge" src="https://soulmaze.neocities.org/images/mspaint.gif">
-<img class="badge" src="https://bloodgulch.neocities.org/graphics/buttons/poweredbydew.png">
-<img class="badge" src="https://i.imgur.com/RS2q2I1.jpg">
-<img class="badge" src="https://dl.glitter-graphics.com/pub/2245/2245938v3ih9ozhzi.gif">
-<img class="badge" src="https://linuxdog.neocities.org/images/buttons/arch.png">
-<img class="badge" src="https://linuxdog.neocities.org/images/buttons/1gimp.gif">
-<img class="badge" src="https://file.garden/ZWclmdszsWLb2cbE/stuff/hylics.gif">
-<img class="badge" src="https://file.garden/ZWclmdszsWLb2cbE/stuff/11.png">
-<img class="badge" src="https://lethalcompound.net/img/graveemail.gif">
-<img class="badge" src="https://uninformednet.neocities.org/index/postal-postal2.gif">
-<img class="badge" src="https://foorsee.neocities.org/gifs%20and%20terry/tor.gif">
-<img class="badge" src="https://risingthumb.github.io/Travelers-of-Agora-Road-webring/img/traveller.png">
-<img class="badge" src="https://skye.sh/media/content/88x31/power-button.gif">
-<img class="badge" src="https://sudoes.neocities.org/buttons/vim.gif">
-<img class="badge" src="https://kadyjerry.neocities.org/images/own/box-stamp.gif">
-<img class="badge" src="https://emocowboy.neocities.org/home/graphics/blinkies/ilovecats.gif">
-<img class="badge" src="https://controlcoreangel.neocities.org/images/graphics/web/buttons/evakngelion.gif">
-<img class="badge" src="https://lavender-but-bread.neocities.org/buttons/meow-button.gif">
-<img class="badge" src="https://pixelsafari.neocities.org/buttons/2hl.gif">
-</div>
-</div>
-
-
-
-</div>
-</div>
+<img src="https://i.postimg.cc/m2MNNYZk/aw-removebg-preview.png" alt="profile">
+<p style="margin-bottom:1.5rem; font-size:0.95rem; opacity:0.7;">Contact me via PGP :</p>
+<pre>-----BEGIN PGP PUBLIC KEY BLOCK-----
+mDMEacjU4hYJKwYBBAHaRw8BAQdAQQoKPm0BoQqoCSVHv3Tp9Bnko9X0COe/PEx/
+XJAxwvC0Bk94MTB2aYi1BBMWCgBdFiEEwwCPlzLZ1+p3CTFR1ytfLppk+00FAmnI
+1OIbFIAAAAAABAAObWFudTIsMi41KzEuMTIsMiwxAhsDBQkFpY3OBQsJCAcCAiIC
+BhUKCQgLAgQWAgMBAh4HAheAAAoJENcrXy6aZPtNTgABAL7U9Pkn4QEqP+z7LAwd
+GKqXIefAtdBNd1obQq9sxTr8AQC8pgRT0uxNg7iWszEELwXQDs7xE8hknK9ToMdL
+sggPBbg4BGnI1OISCisGAQQBl1UBBQEBB0ASTs5ZyhyNB0JKftEZOukWaw3AHQLK
+k+V3WT8S7P2xKwMBCAeImgQYFgoAQhYhBMMAj5cy2dfqdwkxUdcrXy6aZPtNBQJp
+yNTiGxSAAAAAAAQADm1hbnUyLDIuNSsxLjEyLDIsMQIbDAUJBaWNzgAKCRDXK18u
+mmT7TVNZAQCVEmCs0+8DDL11wdGXhIr52xtRKoOaqy+cHmWjRLyomwEAv+vByUJl
+XpBXXoq9qYR21CN2YiZWJiF+AiFADtDFZgo=
+=4cTI
+-----END PGP PUBLIC KEY BLOCK-----</pre>
 </body>
 </html>
